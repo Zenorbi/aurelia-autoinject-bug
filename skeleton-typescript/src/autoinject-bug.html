@@ -1,0 +1,18 @@
+<template>
+	<require from="./test-thing1"></require>
+	<require from="./test-thing2"></require>
+
+	<h1>Inherited autoinject bug</h1>
+    <p>This example shows, how <code>@autoinject</code> on a base class causes aurelia to only render the first custom element inherited from that base class and also swizzle its content.</p>
+    <p>To test the weird behavior:</p>
+    <ol>
+		<li>See how both of the custom element's render below.</li>
+		<li>Open <code>base-class.ts</code> and remove the comment from <code>@autoinject</code></li>
+		<li>See how not only one of the custom element renders, but also the content of it is wrong (First one containing the second one's content)</li>
+    </ol>
+
+    <h2>First custom element here:</h2>
+    <test-thing1></test-thing1>
+    <h2>Second custom element here:</h2>
+    <test-thing2></test-thing2>
+</template>
